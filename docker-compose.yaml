@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  laravel-app:
+    build: .
+    ports:
+      - "8888:80"
+    volumes:
+      - "./:/usr/share/nginx"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
